@@ -7,3 +7,24 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'faker'
+
+# Create users
+puts 'Start user creation..'
+[
+  {
+    email: 'test@mail.com',
+    username: 'username1',
+    password: '12345Test'
+  },
+  {
+    email: 'test2@mail.com',
+    username: 'username2',
+    password: '12345Test'
+  }
+].each do |user_data|
+  User.create!(user_data)
+  puts "User: #{user_data[:username]} created"
+end
+puts 'Finished user creation'
