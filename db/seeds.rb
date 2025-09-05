@@ -11,20 +11,41 @@
 require 'faker'
 
 # Create users
-puts 'Start user creation..'
+puts 'Start users creation..'
+password = '12345Test'
 [
   {
     email: 'test@mail.com',
     username: 'username1',
-    password: '12345Test'
   },
   {
     email: 'test2@mail.com',
     username: 'username2',
-    password: '12345Test'
   }
 ].each do |user_data|
-  User.create!(user_data)
+  User.find_or_create_by!(user_data) do |user|
+    user.password = password
+  end
   puts "User: #{user_data[:username]} created"
 end
-puts 'Finished user creation'
+puts 'Finished users creation'
+
+puts
+
+puts 'Start groups creation..'
+[
+  {
+    name: 'Open Group 1',
+    description: Faker::Lorem.sentence,
+    kind: Group.kinds[:open]
+  },
+  {
+    name: 'Close Group 2',
+    description: Faker::Lorem.sentence,
+    kind: Group.kinds[:close]
+  }
+].each do |group_data|
+  Group.find_or_create_by!(group_data)
+  puts "Group: #{group_data[:name]}, created"
+end
+puts 'Finished groups creation'
