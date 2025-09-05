@@ -17,6 +17,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "devise", "~> 4.9"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -30,6 +32,7 @@ gem "solid_cable"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+
 
 # Deploy this application anywhere as a Docker container [https://kamal-deploy.org]
 gem "kamal", require: false
@@ -62,4 +65,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "devise", "~> 4.9"
+group [:development, :test] do
+  gem "faker", "~> 3.5"
+end
