@@ -36,12 +36,12 @@ puts 'Start groups creation..'
 [
   {
     name: 'Open Group 1',
-    description: Faker::Lorem.sentence,
+    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     kind: Group.kinds[:open]
   },
   {
     name: 'Close Group 2',
-    description: Faker::Lorem.sentence,
+    description: 'Contrary to popular belief, Lorem Ipsum is not simply random text.',
     kind: Group.kinds[:close]
   }
 ].each do |group_data|
@@ -49,3 +49,17 @@ puts 'Start groups creation..'
   puts "Group: #{group_data[:name]}, created"
 end
 puts 'Finished groups creation'
+
+puts
+
+puts 'Start groups_users creation..'
+users = User.all
+groups = Group.all
+
+users.each do |user|
+  groups.each do |group|
+    user.groups << group
+    puts "User: #{user.username} to Group: #{group.name}"
+  end
+end
+puts 'Finished groups_users creation.'
