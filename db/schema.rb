@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_05_231132) do
-  create_table "friends", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "friend_id", null: false
+ActiveRecord::Schema[8.0].define(version: 2025_09_07_102648) do
+  create_table "achievements", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.string "icon", null: false
+    t.integer "kind", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "friend_id"], name: "index_friends_on_user_id_and_friend_id", unique: true
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -58,8 +59,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_05_231132) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "friends", "users"
-  add_foreign_key "friends", "users", column: "friend_id"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
+  add_foreign_key "groups_users", "groups"
+  add_foreign_key "groups_users", "users"
 end
