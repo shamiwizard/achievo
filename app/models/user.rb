@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_and_belongs_to_many :groups
   has_many :friendships
   has_many :friends, through: :friendships
+  has_many :group_achievements, through: :groups, source: :achievements
+  has_many :friendship_achievements, through: :friendships, source: :achievements
 end

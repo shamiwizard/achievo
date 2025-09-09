@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_07_102648) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_07_103807) do
+  create_table "achievement_progresses", force: :cascade do |t|
+    t.integer "friendship_id"
+    t.integer "group_id"
+    t.integer "achievement_id", null: false
+    t.integer "status", default: 0, null: false
+    t.integer "progress", default: 0, null: false
+    t.datetime "started_at"
+    t.datetime "unlocked_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_achievement_progresses_on_achievement_id"
+    t.index ["friendship_id"], name: "index_achievement_progresses_on_friendship_id"
+    t.index ["group_id"], name: "index_achievement_progresses_on_group_id"
+  end
+
   create_table "achievements", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
@@ -59,6 +74,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_07_102648) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "achievement_progresses", "achievements"
+  add_foreign_key "achievement_progresses", "friendships"
+  add_foreign_key "achievement_progresses", "groups"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "groups_users", "groups"
