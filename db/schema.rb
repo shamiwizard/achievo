@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_07_103807) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_09_222954) do
   create_table "achievement_progresses", force: :cascade do |t|
     t.integer "friendship_id"
     t.integer "group_id"
@@ -45,9 +45,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_07_103807) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
-    t.integer "kind"
+    t.integer "kind", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
