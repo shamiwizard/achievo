@@ -8,7 +8,7 @@ group_achievement = AchievementProgress.create!(
   started_at: Time.current,
   progress: 1
 )
-puts "Group AchievementProgress: group - #{group_achievement.group}, achievement - #{ group_achievement.achievement} created"
+puts "Group AchievementProgress: group - #{group_achievement.group.name}, achievement - #{ group_achievement.achievement.name} created"
 
 friendship_achievement = AchievementProgress.create!(
   friendship:,
@@ -16,5 +16,5 @@ friendship_achievement = AchievementProgress.create!(
   status: :not_started,
   progress: 0
 )
-puts "Friendship AchievementProgress: friendship - #{group_achievement.group}, achievement - #{ group_achievement.achievement} created"
+puts "Friendship AchievementProgress: friendship - #{group_achievement.group.name}, achievement - #{ group_achievement.achievement.name} created"
 puts 'Finished achievements creation.'
