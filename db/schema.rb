@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_09_222954) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_12_194653) do
   create_table "achievement_progresses", force: :cascade do |t|
     t.integer "friendship_id"
     t.integer "group_id"
@@ -31,6 +31,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_09_222954) do
     t.text "description", null: false
     t.string "icon", null: false
     t.integer "kind", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "achievements_categories", force: :cascade do |t|
+    t.integer "achievement_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id", "category_id"], name: "idx_on_achievement_id_category_id_15903363b2", unique: true
+    t.index ["category_id"], name: "index_achievements_categories_on_category_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,6 +93,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_09_222954) do
   add_foreign_key "achievement_progresses", "achievements"
   add_foreign_key "achievement_progresses", "friendships"
   add_foreign_key "achievement_progresses", "groups"
+  add_foreign_key "achievements_categories", "achievements"
+  add_foreign_key "achievements_categories", "categories"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "groups_users", "groups"
