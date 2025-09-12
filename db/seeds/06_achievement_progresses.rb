@@ -1,4 +1,4 @@
-puts 'Start friendship creation..'
+puts 'Start achievement_progresses creation..'
 group = Group.last
 friendship = Friendship.last
 group_achievement = AchievementProgress.create!(
@@ -17,4 +17,4 @@ friendship_achievement = AchievementProgress.create!(
   progress: 0
 )
 puts "Friendship AchievementProgress: friendship - #{group_achievement.group.name}, achievement - #{ group_achievement.achievement.name} created"
-puts 'Finished achievements creation.'
+puts 'Finished achievement_progresses creation.'
