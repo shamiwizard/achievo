@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_12_202753) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_19_232804) do
   create_table "achievement_progresses", force: :cascade do |t|
-    t.integer "friendship_id"
-    t.integer "group_id"
+    t.integer "group_id", null: false
     t.integer "achievement_id", null: false
     t.integer "status", default: 0, null: false
     t.integer "progress", default: 0, null: false
@@ -22,7 +21,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_12_202753) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["achievement_id"], name: "index_achievement_progresses_on_achievement_id"
-    t.index ["friendship_id"], name: "index_achievement_progresses_on_friendship_id"
     t.index ["group_id"], name: "index_achievement_progresses_on_group_id"
   end
 
@@ -49,15 +47,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_12_202753) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "friendships", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "friend_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["friend_id"], name: "index_friendships_on_friend_id"
-    t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -91,12 +80,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_12_202753) do
   end
 
   add_foreign_key "achievement_progresses", "achievements"
-  add_foreign_key "achievement_progresses", "friendships"
   add_foreign_key "achievement_progresses", "groups"
   add_foreign_key "achievements_categories", "achievements"
   add_foreign_key "achievements_categories", "categories"
-  add_foreign_key "friendships", "users"
-  add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "groups_users", "groups"
   add_foreign_key "groups_users", "users"
 end
