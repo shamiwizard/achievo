@@ -68,3 +68,5 @@ end
 group :development, :test do
   gem 'faker', '~> 3.5'
 end
+
+gem "rails_icons", "~> 1.4"

@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* border-bottom: solid 1px gray; */
+  padding: 6px 12px;
+  box-shadow: gray 0px 1px 5px;
+}
+
+.header .logo {
+  max-width: 40px;
+}
+
+.header .action-button {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.header .action-button button {
+  text-align: center;
+  border-radius: 12px;
+  border: 0;
+  background-color: #5664f5;
+  color: white;
+  width: 30px;
+  height: 44px;
+}

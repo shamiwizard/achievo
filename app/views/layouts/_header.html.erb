@@ -1,0 +1,19 @@
+<% if content_for?(:header) %>
+  <%= yield(:header) %>
+<% else %>
+  <header class='header'>
+    <%= icon 'trophy', library: 'heroicons', class: ['logo'] %>
+    <h1>Achible</h1>
+    <div class='action-button'>
+      <button>
+        <%= icon 'user', library: 'heroicons' %>
+      </button>
+      <button>
+        <%= icon 'bell', library: 'heroicons' %>
+      </button>
+      <button>
+        <%= icon 'cog-6-tooth', library: 'heroicons' %>
+      </button>
+    </div>
+  </header>
+<% end %>
