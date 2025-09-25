@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @achievements = current_user.achievements.includes(:categories)
-    @categories = Category.find(@achievements.distinct.pluck(:category_id))
-
+    @achievement_progresses = current_user.achievement_progresses.includes(achievement: :categories)
+    @categories = Category.find(@achievement_progresses.distinct.pluck(:category_id))
   end
 end

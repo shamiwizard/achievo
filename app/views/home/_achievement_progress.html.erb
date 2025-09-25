@@ -1,0 +1,27 @@
+  <div class="achievement">
+    <div class="details">
+      <div class="icon">
+        <%= icon 'trophy', library: 'heroicons' %>
+      </div>
+      <div>
+        <h3 class="name"><%= achievement_progress.achievement.name %></h3>
+        <span class="subcategory">Test</span>
+      </div>
+    </div>
+
+    <div class="status <%= achievement_progress.status %>">
+      <span><%= achievement_progress.status.split('_').join(" ").titleize %></span>
+    </div>
+
+    <div class="progress">
+      <progress id="achievement_progress" max="10" value="<%= achievement_progress.progress %>"></progress>
+      <p>Progress: <%= (achievement_progress.progress / 10.0) * 100 %>%</p>
+    </div>
+
+    <% if achievement_progress.group.users.count > 1 %>
+      <div class="with">
+        <span>With:</span>
+        <span>S</span>
+      </div>
+    <% end %>
+  </div>

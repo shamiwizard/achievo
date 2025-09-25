@@ -1,9 +1,11 @@
-<div class='categories'>
-  <% @categories.each do |category| %>
-    <button class="<%= category.name%>"><%= category.name %></button>
-  <% end %>
-</div>
+<% if @categories.count > 1%>
+  <div class='categories'>
+    <% @categories.each do |category| %>
+      <button class="<%= category.name%>"><%= category.name.capitalize %></button>
+    <% end %>
+  </div>
+<% end %>
 
 <div class='achievements'>
-
+  <%= render partial: 'home/achievement_progress', collection: @achievement_progresses %>
 </div>

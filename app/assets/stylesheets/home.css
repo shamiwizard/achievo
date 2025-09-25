@@ -1,5 +1,7 @@
 main .categories {
   display: flex;
+  gap: 12px;
+  overflow-x: scroll;
 }
 
 main .categories button {
@@ -9,5 +11,90 @@ main .categories button {
   font-size: 16px;
   font-weight: bold;
   padding: 11px 10px;
-
+  white-space: nowrap;
 }
+
+main .achievements {
+  padding: 24px 0;
+  display: flex;
+  gap: 17px;
+  flex-wrap: wrap;
+}
+
+main .achievements .achievement {
+  background-color: #1E2128FF;
+  border-radius: 10px;
+  padding: 12px;
+  flex: 1;
+}
+
+main .achievements .achievement .details {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+main .achievements .achievement .details .icon {
+  width: 20px;
+  height: 20px;
+  color: #007CFFFF;
+}
+
+main .achievements .achievement .details .name {
+  color: #F3F4F6FF;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+}
+
+main .achievements .achievement .details .subcategory {
+  font-size: 12px;
+  font-weight: 400;
+  color: #BDC1CAFF;
+}
+
+main .achievements .achievement .status {
+  border-radius: 99px;
+  font-size: 10px;
+  color: white;
+  display: inline;
+  padding: 4px 5px;
+  text-align: center;
+}
+
+main .achievements .achievement .status.in_progress {
+  background-color: #007CFFFF;
+}
+
+main .achievements .achievement .status.unlocked {
+  background-color: #3BAA18FF;
+}
+
+main .achievements .achievement .status.stopped {
+  background-color: #F04C5AFF;
+}
+
+main .achievements .achievement .status.not_started {
+  background-color: wheat;
+}
+
+main .achievements .achievement .progress {
+  margin-top: 8px;
+  font-size: 12px;
+	font-weight:400;
+	color: #BDC1CAFF;
+}
+
+main .achievements .achievement .progress p {
+  margin: 0;
+}
+
+main .achievements .achievement .progress progress::-webkit-progress-bar {
+  background-color: #262A33FF;
+}
+
+main .achievements .achievement .progress progress::-webkit-progress-value {
+  background-color: #007CFFFF;
+}
+
+
