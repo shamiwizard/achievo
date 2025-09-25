@@ -18,10 +18,16 @@
       <p>Progress: <%= (achievement_progress.progress / 10.0) * 100 %>%</p>
     </div>
 
-    <% if achievement_progress.group.users.count > 1 %>
+    <% users = achievement_progress.group.users.where('users.id != ?', current_user.id) %>
+    <% if users.count > 0 %>
       <div class="with">
-        <span>With:</span>
-        <span>S</span>
+        <% users.first(3).each do |user| %>
+          <span><%= user.username.first.upcase %></span>
+        <% end %>
+
+        <% if users.count > 3 %>
+          <span>+<%= achievement_progress.group.users.count - 3 %></span>
+        <% end %>
       </div>
     <% end %>
   </div>
