@@ -19,7 +19,7 @@
     </div>
 
     <% users = achievement_progress.group.users.where('users.id != ?', current_user.id) %>
-    <% if users.count > 0 %>
+    <% if users.count > 2 %>
       <div class="with">
         <% users.first(3).each do |user| %>
           <span><%= user.username.first.upcase %></span>
@@ -31,3 +31,4 @@
       </div>
     <% end %>
   </div>
+

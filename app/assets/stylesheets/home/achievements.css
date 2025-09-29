@@ -1,0 +1,95 @@
+.home main .achievements {
+  padding: 24px 0;
+  display: flex;
+  gap: 17px;
+  flex-wrap: wrap;
+}
+
+.home main .achievements .achievement {
+  background-color: #1E2128FF;
+  border-radius: 10px;
+  padding: 12px;
+  flex: 1;
+}
+
+.home main .achievements .achievement .details {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.home main .achievements .achievement .details .icon {
+  width: 20px;
+  height: 20px;
+  color: #007CFFFF;
+}
+
+.home main .achievements .achievement .details .name {
+  color: #F3F4F6FF;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.home main .achievements .achievement .details .subcategory {
+  font-size: 12px;
+  font-weight: 400;
+  color: #BDC1CAFF;
+}
+
+.home main .achievements .achievement .status {
+  border-radius: 99px;
+  font-size: 10px;
+  color: white;
+  display: inline;
+  padding: 4px 5px;
+  text-align: center;
+}
+
+.home main .achievements .achievement .status.in_progress {
+  background-color: #007CFFFF;
+}
+
+.home main .achievements .achievement .status.unlocked {
+  background-color: #3BAA18FF;
+}
+
+.home main .achievements .achievement .status.stopped {
+  background-color: #F04C5AFF;
+}
+
+.home main .achievements .achievement .status.not_started {
+  background-color: wheat;
+}
+
+.home main .achievements .achievement .progress {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  font-size: 12px;
+	font-weight:400;
+	color: #BDC1CAFF;
+}
+
+.home main .achievements .achievement .progress p {
+  margin: 0;
+}
+
+.home main .achievements .achievement .progress progress::-webkit-progress-bar {
+  background-color: #262A33FF;
+}
+
+.home main .achievements .achievement .progress progress::-webkit-progress-value {
+  background-color: #007CFFFF;
+}
+
+.home main .achievements .achievement .with span {
+  color: #BDC1CAFF;
+  font-size: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius:100%;
+  background-color: #262A33FF;
+  display: inline-block;
+  align-content: space-evenly;
+  text-align: center;
+}

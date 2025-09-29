@@ -1,11 +1,33 @@
-<% if @categories.count > 1%>
-  <div class='categories'>
-    <% @categories.each do |category| %>
-      <button class="<%= category.name%>"><%= category.name.capitalize %></button>
-    <% end %>
-  </div>
-<% end %>
+<h2>My Achievements</h2>
+<div class='filters'>
+  <% if @statuses.count > 2 %>
+    <div class='statuses'>
+      <a href='<%= root_path %>' class='status all selected'>All</a>
+      <% @statuses.each do |status| %>
+        <a href='<%= root_path(status: status) %>' class='status'><%= status.gsub('_', ' ').titleize %></a>
+      <% end %>
+    </div>
+  <% end %>
 
+  <% if @categories.count > 0 %>
+    <div class='categories'>
+      <% @categories.each do |category| %>
+        <button class='category'><%= category.name %></button>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 <div class='achievements'>
   <%= render partial: 'home/achievement_progress', collection: @achievement_progresses %>
 </div>
+
+
+
+<h2>Quick Actions</h2>
+<div class='quick-actions'>
+  <div class='find-achievements'>
+    <button>Find More Achievements</button> 
+  </div>
+  <div> 
+</div>
+
