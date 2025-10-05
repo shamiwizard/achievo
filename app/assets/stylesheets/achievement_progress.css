@@ -1,0 +1,12 @@
+.achievement_progress .main .content-block {
+  background-color: #1E2128FF;
+  padding: 24px;
+  color: #F3F4F6FF;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.achievement_progress .main .name { 
+  color: #F3F4F6FF;
+  text-align: center;
+}

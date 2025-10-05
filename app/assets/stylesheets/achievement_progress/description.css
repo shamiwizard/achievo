@@ -1,0 +1,19 @@
+.achievement_progress .main .description h3{
+  margin: 0 0 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.achievement_progress .main .description p {
+  color: #BDC1CA;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.achievement_progress .main .description span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #F3F4F6;
+}
+

@@ -1,0 +1,48 @@
+<h1 class="name"><%= @achievement_progress.achievement.name %></h1>
+
+<div class='group-context content-block'>
+  <label for='group-select'>Viewing context</label>
+  <select name='group' id='group-select'>
+    <option value='Test'>Test</option>
+  </select>
+</div>
+
+<div class='progress content-block'> 
+  <p>Progress</p>
+  <progress value='<%= @achievement_progress.progress %>' max='10'></progress>
+  <fieldset>
+    <div> 
+      <input type='checkbox' id='test' name='progress' value='test' />
+      <label for='test'>Test</label>
+    </div>
+    <div> 
+      <input type='checkbox' id='test1' name='progress' value='test1' />
+      <label for='test'>Test1</label>
+    </div>
+  </fieldset>
+</div>
+
+<div class='description content-block'>
+  <h3>Achievement Info</h3>
+  <p><%= @achievement_progress.achievement.description %></p>
+  <span>Started on July 28, 2024</span>
+</div>
+
+<div class='participants content-block'>
+  <div class='participant'>
+    <div class='image'>
+         img
+    </div>
+    <div class='name'>Name</div>
+  </div>
+
+  <div class='participant'>
+    <div class='image'>
+         img
+    </div>
+    <div class='name'>Name</div>
+  </div>
+</div>
+
+<div class='action-buttons'>
+</div>

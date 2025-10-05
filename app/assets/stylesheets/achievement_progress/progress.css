@@ -1,0 +1,41 @@
+.achievement_progress .main .progress p { 
+  margin: 0 0 13px;
+  color: #F3F4F6;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.achievement_progress .main .progress progress { 
+  margin-bottom: 13px;
+}
+
+.achievement_progress .main .progress ul {
+  list-style: none;
+  padding: 0;
+}
+ 
+.achievement_progress .main .progress fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievement_progress .main .progress fieldset div {
+  margin-bottom: 6px;
+}
+
+.achievement_progress .main .progress fieldset div:last-child {
+  margin-bottom: 0;
+}
+
+.achievement_progress .main .progress fieldset label {
+  color: #BDC1CA;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+
+.achievement_progress .main .progress fieldset input {
+  margin: 0 6px 0 0;
+  vertical-align: middle;
+}
