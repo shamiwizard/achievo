@@ -1,0 +1,13 @@
+<div class='participants content-block'>
+  <h3>Participats</h3>
+  <div class='profiles'>
+    <% selected_group.users.each do |user| %>
+      <div class='participant'>
+        <div class='image'>
+          img
+        </div>
+        <div class='name'><%= user.username %></div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_and_belongs_to_many :groups
-  has_many :achievements, through: :groups
   has_many :achievement_progresses, through: :groups
+  has_many :achievements, through: :achievement_progresses
 end
