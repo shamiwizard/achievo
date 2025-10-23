@@ -27,5 +27,6 @@
   <%= render partial: 'achievement_progress/participants', locals: { selected_group: @achievement_progress.group } %>
 
   <div class='action-buttons'>
+    <a class='btn-leave' href='<%= root_path %>' data-turbo-frame='_top'>Leave</>
   </div>
 <% end %>

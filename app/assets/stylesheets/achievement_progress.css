@@ -10,3 +10,21 @@
   color: #F3F4F6FF;
   text-align: center;
 }
+
+.achievement_progress .main .action-buttons .btn-leave {
+  margin-top: 20px;
+  color: white;
+  background-color: #F04C5A;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding: 10px 0;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.achievement_progress .main .action-buttons .btn-leave:hover {
+  background-color: #F04C7A;
+}
