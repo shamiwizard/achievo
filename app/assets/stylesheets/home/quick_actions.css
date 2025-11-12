@@ -1,0 +1,28 @@
+.home .main .quick-actions {
+}
+
+.home .main .quick-actions .find-achievements {
+  background-color: #103107;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.home .main .quick-actions .find-achievements a {
+  text-decoration: none;
+  color: #FFF;
+  padding: 15px;
+}
+.home .main .quick-actions .find-achievements a .icon {
+  width: 32px;
+  height: 32px;
+  color: #3BAA18;
+}
+
+.home .main .quick-actions .find-achievements a p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
